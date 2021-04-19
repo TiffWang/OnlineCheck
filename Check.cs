@@ -8,6 +8,13 @@ namespace OnlineCheck
 {
     public class Check
     {
+        public static void Run()
+        {
+            while (true)
+            {
+                CheckOnline();
+            }
+        }
         public static void CheckOnline()
         {
             string corpId = "ww8216c019edc9fc4a";

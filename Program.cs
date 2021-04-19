@@ -23,7 +23,8 @@ namespace OnlineCheck
                     var port = Environment.GetEnvironmentVariable("PORT");
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseUrls("http://*:" + port);
-                   // webBuilder.UseStartup<Startup>();
-                });
+                    // webBuilder.UseStartup<Startup>();
+                }
+                );
     }
 }
