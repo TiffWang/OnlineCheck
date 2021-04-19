@@ -28,11 +28,7 @@ namespace OnlineCheck
 
             app.UseRouting();
 
-            while (true)
-            {
-                Check.CheckOnline();
-            }
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
@@ -40,6 +36,12 @@ namespace OnlineCheck
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+            
+            while (true)
+            {
+                Check.CheckOnline();
+            }
+
         }
     }
 }
