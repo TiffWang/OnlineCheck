@@ -21,10 +21,8 @@ namespace OnlineCheck
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     var port = Environment.GetEnvironmentVariable("PORT");
-                    webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://*:" + port);
-                    // webBuilder.UseStartup<Startup>();
-                }
-                );
+                    webBuilder.UseUrls("http://*:" + port);//heroku部署启用
+                    //webBuilder.UseUrls("http://*:5001");
+                });
     }
 }
