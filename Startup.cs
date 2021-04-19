@@ -29,18 +29,13 @@ namespace OnlineCheck
 
             app.UseRouting();
 
-            while (true)
+            app.UseEndpoints(endpoints =>
             {
-                Check.CheckOnline();
-            }
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
+                endpoints.MapGet("/", async context =>
+                {
+                    Check.Run();
+                });
+            });
         }
     }
 }
